@@ -1,0 +1,167 @@
+version: 2
+
+models:
+
+  # ----------------------------------------------------------------
+  # prata_orders — atividade: completar os TODOs no .sql
+  # ----------------------------------------------------------------
+  - name: prata_orders
+    description: >
+      Tabela silver com os pedidos padronizados.
+      Inclui conversão de datas para TIMESTAMP e flag de entrega no prazo.
+
+    columns:
+      - name: order_id
+        data_type: varchar
+        description: Identificador único do pedido.
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        data_type: varchar
+        description: Identificador do cliente que realizou o pedido.
+        tests:
+          - not_null
+
+      - name: order_status
+        data_type: varchar
+        description: Status atual do pedido.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['delivered', 'shipped', 'canceled', 'processing', 'invoiced', 'unavailable', 'approved', 'created']
+
+      - name: order_purchase_timestamp
+        data_type: timestamp
+        description: Data e hora da compra.
+        tests:
+          - not_null
+
+      - name: order_approved_at
+        data_type: timestamp
+        description: Data e hora da aprovação do pagamento.
+
+      - name: order_delivered_customer_date
+        data_type: timestamp
+        description: Data e hora em que o pedido foi entregue ao cliente.
+
+      - name: order_estimated_delivery_date
+        data_type: timestamp
+        description: Data estimada de entrega prometida ao cliente.
+
+      # TODO: descomente e ajuste após implementar o campo no .sql
+      # - name: entregue_no_prazo
+      #   data_type: boolean
+      #   description: TRUE se o pedido foi entregue antes ou na data estimada.
+      #   tests:
+      #     - not_null
+
+  # ----------------------------------------------------------------
+  # prata_customers — atividade: completar os TODOs no .sql
+  # ----------------------------------------------------------------
+  - name: prata_customers
+    description: >
+      Tabela silver com os clientes padronizados.
+      ZIP code com 8 dígitos e cidade em UPPER CASE.
+
+    columns:
+      - name: customer_id
+        data_type: varchar
+        description: Identificador único do cliente neste pedido.
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_unique_id
+        data_type: varchar
+        description: Identificador único global do cliente (pode ter múltiplos customer_id).
+        tests:
+          - not_null
+
+      - name: zip_code
+        data_type: varchar
+        description: CEP do cliente (8 dígitos, com zeros à esquerda).
+        tests:
+          - not_null
+
+      - name: city
+        data_type: varchar
+        description: Cidade do cliente (em UPPER CASE).
+        tests:
+          - not_null
+
+      - name: state
+        data_type: varchar
+        description: UF do estado do cliente (2 caracteres).
+        tests:
+          - not_null
+
+  # ----------------------------------------------------------------
+  # prata_products — atividade: completar os TODOs no .sql
+  # ----------------------------------------------------------------
+  - name: prata_products
+    description: >
+      Tabela silver com os produtos padronizados.
+      Categoria em UPPER CASE sem underscores, preço tipado como DOUBLE.
+
+    columns:
+      - name: product_id
+        data_type: varchar
+        description: Identificador único do produto.
+        tests:
+          - not_null
+          - unique
+
+      - name: category
+        data_type: varchar
+        description: Categoria do produto (UPPER CASE, sem underscores).
+        tests:
+          - not_null
+
+      - name: product_name
+        data_type: varchar
+        description: Nome do produto.
+        tests:
+          - not_null
+
+      # TODO: após renomear no .sql, atualize o name abaixo de price_brl para price
+      - name: price_brl
+        data_type: double
+        description: Preço do produto em reais (BRL).
+        tests:
+          - not_null
+
+  # ----------------------------------------------------------------
+  # prata_sellers — atividade: completar os TODOs no .sql
+  # ----------------------------------------------------------------
+  - name: prata_sellers
+    description: >
+      Tabela silver com os vendedores padronizados.
+      ZIP code com 8 dígitos e cidade em UPPER CASE.
+
+    columns:
+      - name: seller_id
+        data_type: varchar
+        description: Identificador único do vendedor.
+        tests:
+          - not_null
+          - unique
+
+      - name: zip_code
+        data_type: varchar
+        description: CEP do vendedor (8 dígitos, com zeros à esquerda).
+        tests:
+          - not_null
+
+      - name: city
+        data_type: varchar
+        description: Cidade do vendedor (em UPPER CASE).
+        tests:
+          - not_null
+
+      - name: state
+        data_type: varchar
+        description: UF do estado do vendedor (2 caracteres).
+        tests:
+          - not_null

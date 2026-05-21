@@ -1,0 +1,11 @@
+product_id,category,product_name,price_brl
+P001,eletronicos,Smartphone Samsung Galaxy,799.9
+P002,eletronicos,Notebook Dell Inspiron,2499.0
+P003,informatica,Mouse Sem Fio Logitech,89.9
+P004,informatica,Teclado Mecanico Redragon,249.0
+P005,esporte_lazer,Tenis Nike Air Max,399.0
+P006,esporte_lazer,Bicicleta Caloi Explorer,1199.0
+P007,casa_jardim,Cadeira de Escritorio,599.0
+P008,casa_jardim,Luminaria de Mesa LED,79.9
+P009,bebes,Carrinho de Bebe Burigotto,899.0
+P010,brinquedos,LEGO Star Wars,349.0

@@ -1,0 +1,21 @@
+customer_id,customer_unique_id,zip_code,city,state
+C001,U001,20040,Rio de Janeiro,RJ
+C002,U002,01310,Sao Paulo,SP
+C003,U003,90010,Porto Alegre,RS
+C004,U004,80010,Curitiba,PR
+C005,U005,80010,Curitiba,PR
+C006,U006,30130,Belo Horizonte,MG
+C007,U007,20040,Rio de Janeiro,RJ
+C008,U008,69010,Manaus,AM
+C009,U009,20040,Rio de Janeiro,RJ
+C010,U010,70040,Brasilia,DF
+C011,U011,50010,Recife,PE
+C012,U012,01310,Sao Paulo,SP
+C013,U013,01310,Sao Paulo,SP
+C014,U014,20040,Rio de Janeiro,RJ
+C015,U015,80010,Curitiba,PR
+C016,U016,80010,Curitiba,PR
+C017,U017,69010,Manaus,AM
+C018,U018,70040,Brasilia,DF
+C019,U019,01310,Sao Paulo,SP
+C020,U020,69010,Manaus,AM
