@@ -14,6 +14,9 @@ python -m venv .venv
 # Instalar dependências
 pip install -r requirements.txt
 
+# Carregue as rependências do DBT
+dbt deps
+
 # Carregar as seeds (necessário na primeira run)
 dbt seed --profiles-dir .
 ```
@@ -24,7 +27,7 @@ Para resetar o banco de dados (caso necessário):
 Fluxo padrão para executar código DBT:
 ```bash
 # Rodar apenas um modelo específico
-dbt run --select core_order_items --profiles-dir .
+dbt run --select prata_order_items --profiles-dir .
 
 # Executar testes
 dbt test --profiles-dir .

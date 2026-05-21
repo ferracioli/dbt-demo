@@ -6,4 +6,3 @@ logs/
 package-lock.yml
 .venv/
 .user.yml
-profiles.yml

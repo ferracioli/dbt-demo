@@ -1,0 +1,7 @@
+dbt_meetup:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb          # arquivo gerado localmente, ignorado pelo git
+      threads: 4
