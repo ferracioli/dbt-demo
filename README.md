@@ -11,7 +11,7 @@ Ambiente sandbox local para o meetup de dbt usando o dataset **Brazilian E-Comme
 python -m venv .venv 
 ./.venv/scripts/activate
 
-# Instalar dependências
+# Instalar dependências:
 pip install -r requirements.txt
 
 # Carregue as rependências do DBT
